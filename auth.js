@@ -43,7 +43,12 @@ if (signupForm) {
                 // Redirect handled by onAuthStateChanged
             })
             .catch((error) => {
-                errorMsg.textContent = error.message;
+                console.error("Signup error:", error);
+                if (error.code === 'auth/unauthorized-domain') {
+                    errorMsg.innerHTML = `Domain not authorized. <br>Go to Firebase Console -> Authentication -> Settings -> Authorized Domains and add this domain.`;
+                } else {
+                    errorMsg.textContent = error.message;
+                }
                 errorMsg.classList.remove('d-none');
             });
     });
@@ -63,7 +68,14 @@ if (loginForm) {
                 // Redirect handled by onAuthStateChanged
             })
             .catch((error) => {
-                errorMsg.textContent = error.message;
+                console.error("Login error:", error);
+                if (error.code === 'auth/unauthorized-domain') {
+                    errorMsg.innerHTML = `Domain not authorized. <br>Go to Firebase Console -> Authentication -> Settings -> Authorized Domains and add this domain.`;
+                } else if (error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                    errorMsg.textContent = "Incorrect email or password. Please try again.";
+                } else {
+                    errorMsg.textContent = error.message;
+                }
                 errorMsg.classList.remove('d-none');
             });
     });
