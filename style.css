@@ -536,10 +536,10 @@ body {
 .notification-item {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
     border-bottom: 1px solid #f0f0f0;
     transition: 0.2s;
     cursor: pointer;
+    padding: 0;
 }
 
 .notification-item:last-child {
@@ -549,6 +549,19 @@ body {
 .notification-item:hover {
     background-color: #f0f4ff;
     border-left: 4px solid var(--saylani-blue);
+}
+
+.notification-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.notification-link:hover {
+    color: inherit;
 }
 
 .notif-icon-circle {
