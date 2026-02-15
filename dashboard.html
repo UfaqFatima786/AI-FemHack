@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Saylani Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper d-flex">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.saylaniwelfare.com/static/media/logo_saylaniwelfare.22bf709605809177256c.png"
+                    alt="Saylani Logo" class="img-fluid">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="lost-found.html">
+                        <i class="fas fa-search"></i> Lost & Found
+                    </a>
+                </li>
+                <li>
+                    <a href="complaints.html">
+                        <i class="fas fa-exclamation-circle"></i> Complaints
+                    </a>
+                </li>
+                <li>
+                    <a href="volunteer.html">
+                        <i class="fas fa-hands-helping"></i> Volunteers
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-bell"></i> Notifications
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-auto p-4">
+                <button onclick="logout()" class="btn btn-outline-danger w-100 btn-sm">
+                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content" class="w-100">
+            <!-- Header (Welcome) -->
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h2 class="fw-bold text-dark">Lost & Found Report</h2>
+                    <p class="text-muted mb-0">Overview of campus activities</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="text-muted me-3" id="user-greeting">Welcome, User</span>
+                    <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff"
+                        class="rounded-circle shadow-sm" width="45" alt="Avatar">
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon blue-bg"><i class="fas fa-file-alt"></i></div>
+                        <div class="stat-info">
+                            <h5>Total Reports</h5>
+                            <h2>128</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <div class="stat-icon red-bg"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h5>Active Complaints</h5>
+                            <h2>5</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <div class="stat-icon green-bg"><i class="fas fa-check-circle"></i></div>
+                            <h5>Items Matched</h5>
+                            <h2>12</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <div class="stat-icon orange-bg"><i class="fas fa-calendar-alt"></i></div>
+                            <h5>Events Registered</h5>
+                            <h2>8</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity + Illustration/Map placeholder logic -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="activity-card">
+                        <h4 class="fw-bold mb-4">Recent Activity</h4>
+
+                        <!-- Activity List -->
+                        <div class="list-group list-group-flush">
+                            <!-- Item 1 -->
+                            <div class="activity-item">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="activity-icon bg-green">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h6>Phone</h6>
+                                        <small>Lost • 2 hours ago</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="status-badge pending">Pending</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="activity-item">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="activity-icon bg-green">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h6>Backpack</h6>
+                                        <small>Found • 5 hours ago</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="status-badge resolved">Resolved</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="activity-item">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="activity-icon bg-blue">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h6>Wallet</h6>
+                                        <small>Lost • 1 day ago</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="status-badge matching">Matching</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex gap-3 mt-4 pt-3 border-top">
+                            <a href="lost-found.html" class="action-btn-green text-decoration-none">
+                                <i class="fas fa-plus-square me-2"></i> Report Lost Item
+                            </a>
+                            <a href="complaints.html" class="action-btn-white text-decoration-none">
+                                <i class="fas fa-edit me-2 text-success"></i> Submit Complaint
+                            </a>
+                            <a href="volunteer.html" class="action-btn-white text-decoration-none">
+                                <i class="fas fa-calendar-plus me-2 text-danger"></i> Register for Event
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!-- Config & Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Simple script to display user name if available in auth
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                const greeting = document.getElementById('user-greeting');
+                if (greeting) {
+                    greeting.textContent = user.email || "Welcome, User";
+                }
+            }
+        });
+    </script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
