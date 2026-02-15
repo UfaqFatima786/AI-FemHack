@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost & Found - Saylani Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,78 +15,151 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-saylani-blue shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="dashboard.html">Saylani <span>Portal</span></a>
-            <div class="d-flex">
-                <a href="dashboard.html" class="btn btn-outline-light btn-sm me-2">Dashboard</a>
-                <button onclick="logout()" class="btn btn-outline-light btn-sm">Logout</button>
+    <div class="wrapper d-flex">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.saylaniwelfare.com/static/media/logo_saylaniwelfare.22bf709605809177256c.png"
+                    alt="Saylani Logo" class="img-fluid">
             </div>
-        </div>
-    </nav>
 
-    <!-- Content -->
-    <div class="container py-5">
-        <h2 class="text-saylani-blue mb-4"><i class="fas fa-search me-2"></i>Lost & Found</h2>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="lost-found.html" class="active">
+                        <i class="fas fa-search"></i> Lost & Found
+                    </a>
+                </li>
+                <li>
+                    <a href="complaints.html">
+                        <i class="fas fa-exclamation-circle"></i> Complaints
+                    </a>
+                </li>
+                <li>
+                    <a href="volunteer.html">
+                        <i class="fas fa-hands-helping"></i> Volunteers
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-bell"></i> Notifications
+                    </a>
+                </li>
+            </ul>
 
-        <div class="row">
-            <!-- Post Item Form -->
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-white border-bottom-0">
-                        <h5 class="mb-0 text-saylani-green">Post an Item</h5>
-                    </div>
-                    <div class="card-body">
+            <div class="mt-auto p-4">
+                <button onclick="logout()" class="btn btn-outline-danger w-100 btn-sm">
+                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content" class="w-100">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h2 class="fw-bold text-dark">Lost & Found Report</h2>
+                    <p class="text-muted mb-0">Submit a report for lost or found items.</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="text-muted me-3" id="user-greeting">Welcome, User</span>
+                    <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff"
+                        class="rounded-circle shadow-sm" width="45" alt="Avatar">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                    <div class="card border-0 shadow-sm p-4 rounded-4">
+                        <h4 class="fw-bold mb-4">Report Lost Item</h4>
+
                         <form id="lost-found-form">
                             <div class="mb-3">
-                                <label class="form-label">Type</label>
-                                <select class="form-select" id="item-type" required>
-                                    <option value="Lost">Lost</option>
-                                    <option value="Found">Found</option>
+                                <label class="form-label text-muted small fw-bold">Item Name</label>
+                                <input type="text" class="form-control" id="item-title" required>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Category</label>
+                                    <select class="form-select" id="item-category">
+                                        <option>Electronics</option>
+                                        <option>Accessories</option>
+                                        <option>Books</option>
+                                        <option>Mobiles</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Report Type</label>
+                                    <select class="form-select" id="item-type">
+                                        <option value="Lost">Lost Item</option>
+                                        <option value="Found">Found Item</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Description</label>
+                                <textarea class="form-control" id="item-desc" rows="3"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Location</label>
+                                <select class="form-select" id="item-location">
+                                    <option>Main Campus</option>
+                                    <option>Lab 1</option>
+                                    <option>Cafeteria</option>
+                                    <option>Library</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control" id="item-title" placeholder="e.g. Blue Wallet"
-                                    required>
+
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold d-block">Urgency</label>
+                                <div class="urgency-pills">
+                                    <div class="flex-grow-1">
+                                        <input type="radio" name="urgency" id="low" value="low" class="urgency-radio"
+                                            checked>
+                                        <label for="low" class="urgency-label">Low</label>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <input type="radio" name="urgency" id="medium" value="medium"
+                                            class="urgency-radio">
+                                        <label for="medium" class="urgency-label">Medium</label>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <input type="radio" name="urgency" id="high" value="high" class="urgency-radio">
+                                        <label for="high" class="urgency-label">High</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Description</label>
-                                <textarea class="form-control" id="item-desc" rows="3" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Image URL (Optional)</label>
-                                <input type="url" class="form-control" id="item-image"
-                                    placeholder="https://example.com/image.jpg">
-                            </div>
-                            <button type="submit" class="btn btn-saylani-blue w-100">Post Item</button>
+
+                            <button type="submit" class="btn btn-saylani-blue w-100 py-2 fw-bold">Submit
+                                Complaint</button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!-- Items List -->
-            <div class="col-lg-8">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-white border-bottom-0 d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0 text-saylani-blue">Recent Posts</h5>
-                        <span class="badge bg-secondary">Real-time</span>
-                    </div>
-                    <div class="card-body p-0">
-                        <div id="items-list" class="list-group list-group-flush">
-                            <!-- Items will be loaded here dynamically -->
-                            <div class="text-center p-4">
-                                <div class="spinner-border text-primary" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                            </div>
+            <!-- Recent Posts List (Kept for functionality) -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8 col-lg-7">
+                    <h5 class="fw-bold mb-3">Recent Listings</h5>
+                    <div id="items-list" class="list-group list-group-flush bg-white rounded-4 shadow-sm">
+                        <!-- Items will be loaded here dynamically -->
+                        <div class="text-center p-4">
+                            <span class="text-muted">Loading items...</span>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -97,6 +172,19 @@
     <script src="firebase-config.js"></script>
     <script src="auth.js"></script>
     <script src="app.js"></script>
+    <script>
+        // Sidebar active state logic for sub-pages
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                const greeting = document.getElementById('user-greeting');
+                if (greeting) {
+                    greeting.textContent = user.email || "Welcome, User";
+                }
+            }
+        });
+    </script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
