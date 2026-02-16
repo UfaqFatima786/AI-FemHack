@@ -88,71 +88,67 @@
                 </div>
             </div>
 
-            <!-- Notifications Card -->
+            <!-- Notifications Card Clone -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-5">
-                    <div class="notification-card">
-                        <div class="notification-header">
-                            <h5 class="d-flex align-items-center"><i class="fas fa-comment-alt me-2"></i> Notifications
+                    <div class="notification-clone-card">
+                        <!-- Header -->
+                        <div class="notif-header">
+                            <h5>
+                                <div class="header-icon"><i class="fas fa-heart text-danger"></i></div>
+                                Notifications
                             </h5>
-                            <i class="fas fa-check-double text-white-50" title="Mark all as read"
-                                style="cursor: pointer;"></i>
+                            <i class="fas fa-check-double notif-check-icon" title="Mark all as read"></i>
                         </div>
-                        <ul class="notification-list">
-                            <!-- Complaint Resolved -> Go to Complaints -->
-                            <li class="notification-item">
-                                <a href="complaints.html" class="notification-link">
-                                    <div class="notif-icon-circle notif-bg-gold">
-                                        <i class="fas fa-hard-hat"></i>
-                                    </div>
-                                    <div class="notif-content">
-                                        <h6>Complaint Marked as Resolved</h6>
-                                        <small>22 Oct 2021</small>
-                                    </div>
-                                    <div class="notif-time">4m</div>
-                                </a>
+
+                        <!-- List -->
+                        <ul class="notif-list">
+                            <!-- Item 1: Complaint -->
+                            <li class="notif-item">
+                                <div class="notif-icon-circle notif-bg-gold">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="notif-content">
+                                    <h6>Complaint Marked as Resolved</h6>
+                                    <small>22 Oct 2021</small>
+                                </div>
+                                <div class="notif-time">4m</div>
                             </li>
 
-                            <!-- Laptop Found -> Go to Lost & Found -->
-                            <li class="notification-item">
-                                <a href="lost-found.html" class="notification-link">
-                                    <div class="notif-icon-circle notif-bg-indigo">
-                                        <i class="fas fa-leaf"></i>
-                                    </div>
-                                    <div class="notif-content">
-                                        <h6>Laptop Found: Matches with Your Report!</h6>
-                                        <small>15 Oct 2021</small>
-                                    </div>
-                                    <div class="notif-time">45m</div>
-                                </a>
+                            <!-- Item 2: Laptop Found -->
+                            <li class="notif-item">
+                                <div class="notif-icon-circle notif-bg-indigo">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="notif-content">
+                                    <h6>Laptop Found: Matches with Your Report!</h6>
+                                    <small>15 Oct 2021</small>
+                                </div>
+                                <div class="notif-time">45m</div>
                             </li>
 
-                            <!-- Event Reminder -> Go to Volunteer -->
-                            <li class="notification-item">
-                                <a href="volunteer.html" class="notification-link">
-                                    <div class="notif-icon-circle notif-bg-green">
-                                        <i class="fas fa-puzzle-piece"></i>
-                                    </div>
-                                    <div class="notif-content">
-                                        <h6>Reminder: Event Tomorrow</h6>
-                                        <small>21 Oct 2021</small>
-                                    </div>
-                                    <div class="notif-time">48m</div>
-                                </a>
+                            <!-- Item 3: Reminder -->
+                            <li class="notif-item">
+                                <div class="notif-icon-circle notif-bg-green">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <div class="notif-content">
+                                    <h6>Reminder: Event Tomorrow</h6>
+                                    <small>21 Oct 2021</small>
+                                </div>
+                                <div class="notif-time">48m</div>
                             </li>
 
-                            <!-- New Event -> Go to Volunteer -->
-                            <li class="notification-item">
-                                <a href="volunteer.html" class="notification-link">
-                                    <div class="notif-icon-circle notif-bg-blue">
-                                        <i class="fas fa-pen-nib"></i>
-                                    </div>
-                                    <div class="notif-content">
-                                        <h6>New Event!</h6>
-                                        <small>18 Oct 2021</small>
-                                    </div>
-                                    <div class="notif-time">7pm</div>
-                                </a>
+                            <!-- Item 4: New Event -->
+                            <li class="notif-item">
+                                <div class="notif-icon-circle notif-bg-blue">
+                                    <i class="fas fa-pen-nib"></i>
+                                </div>
+                                <div class="notif-content">
+                                    <h6>Stay Report!</h6>
+                                    <small>22 Oct 2021</small>
+                                </div>
+                                <div class="notif-time">7pm</div>
                             </li>
                         </ul>
                     </div>

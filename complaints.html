@@ -63,127 +63,123 @@
         <div id="content" class="w-100">
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-5">
-                <div>
-                    <h2 class="fw-bold text-dark"><i class="fas fa-edit text-success me-2"></i>Submit Complaint</h2>
-                    <p class="text-muted mb-0">Report issues and track resolution</p>
-                </div>
-                <div class="d-flex align-items-center">
-                    <span class="text-muted me-3" id="user-greeting">Welcome, User</span>
-                    <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff"
-                        class="rounded-circle shadow-sm" width="45" alt="Avatar">
-                </div>
+                <!-- Empty or Breadcrumb if needed, keeping it clean for now -->
             </div>
 
-            <!-- Complaint Form -->
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm p-4 rounded-4">
-                        <form id="complaint-form">
-                            <div class="mb-3">
-                                <label class="form-label text-muted small fw-bold">Complaint Title</label>
-                                <input type="text" class="form-control" id="complaint-title" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label text-muted small fw-bold">Category</label>
-                                <select class="form-select text-dark" id="complaint-category">
-                                    <option>Maintenance</option>
-                                    <option>Janitorial</option>
-                                    <option>Security</option>
-                                    <option>IT Support</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="complaint-desc" placeholder="Description"
-                                    required>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label text-muted small fw-bold">Location</label>
-                                <select class="form-select" id="complaint-location">
-                                    <option>Main Campus</option>
-                                    <option>Labs</option>
-                                    <option>Washrooms</option>
-                                    <option>Cafeteria</option>
-                                </select>
-                            </div>
-
-                            <!-- Urgency Section -->
-                            <div class="d-flex align-items-center mb-4">
-                                <span class="fw-bold me-4"><i
-                                        class="fas fa-calendar-alt text-success me-2"></i>Urgency</span>
-                                <div class="d-flex gap-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="urgency" id="urg-low"
-                                            value="low" checked style="accent-color: var(--saylani-green);">
-                                        <label class="form-check-label fw-bold" for="urg-low">Low</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="urgency" id="urg-medium"
-                                            value="medium" style="accent-color: #ffbc00;">
-                                        <label class="form-check-label fw-bold" for="urg-medium">Medium</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="urgency" id="urg-high"
-                                            value="high" style="accent-color: #e53935;">
-                                        <label class="form-check-label fw-bold" for="urg-high">High</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-saylani-blue w-100 py-2 fw-bold">Submit
-                                Complaint</button>
-                        </form>
+            <div class="container-fluid">
+                <!-- Submit Complaint Card -->
+                <div class="complaint-card mb-4">
+                    <div class="complaint-header">
+                        <i class="fas fa-edit"></i>
+                        <h4>Submit Complaint</h4>
                     </div>
-                </div>
-            </div>
 
-            <!-- Complaints List -->
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="fw-bold m-0">My Complaints</h5>
-                        <div class="text-muted small">
-                            Status: <a href="#" class="filter-link active">All</a> |
-                            Category: <a href="#" class="filter-link">All</a>
+                    <form>
+                        <!-- Title -->
+                        <div class="mb-3">
+                            <label class="form-label-clone">Complaint Title</label>
+                            <input type="text" class="form-control-clone" placeholder="">
                         </div>
+
+                        <!-- Category -->
+                        <div class="mb-3">
+                            <label class="form-label-clone">Category</label>
+                            <select class="form-control-clone">
+                                <option>Pickpockets</option>
+                                <option>Harassment</option>
+                                <option>Lost Item</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label class="form-label-clone">Description</label>
+                            <textarea class="form-control-clone" placeholder=""></textarea>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="mb-3">
+                            <label class="form-label-clone">Location</label>
+                            <select class="form-control-clone">
+                                <option></option>
+                                <option>Cafeteria</option>
+                                <option>Library</option>
+                                <option>Main Gate</option>
+                            </select>
+                        </div>
+
+                        <!-- Urgency -->
+                        <div class="urgency-container mb-4">
+                            <div class="urgency-label">
+                                <i class="fas fa-calendar-check"></i> Urgency
+                            </div>
+                            <div class="urgency-options">
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="low" checked>
+                                    <span class="urgency-dot dot-low"></span> Low
+                                </label>
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="medium">
+                                    <span class="urgency-dot dot-medium"></span> Medium
+                                </label>
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="high">
+                                    <span class="urgency-dot dot-high"></span> High
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" class="btn-submit-complaint">Submit Complaint</button>
+                    </form>
+                </div>
+
+                <!-- My Complaints Table Section -->
+                <div class="my-complaints-section">
+                    <div class="table-header-custom">
+                        <h5>My Complaints</h5>
+                        <div class="table-header-meta">Status: All | Category: All</div>
                     </div>
 
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Complaints</th>
-                                <th>Location</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="complaints-list">
-                            <!-- Placeholder Data -->
-                            <tr>
-                                <td>503</td>
-                                <td class="fw-bold">Wi-Fi Not Working</td>
-                                <td><i class="fas fa-map-marker-alt text-muted me-2"></i>Lab Number</td>
-                                <td><span class="status-badge pending">Pending</span></td>
-                                <td><i class="fas fa-ellipsis-h text-muted"></i></td>
-                            </tr>
-                            <tr>
-                                504</td>
-                                <td class="fw-bold">Leaky Pipe</td>
-                                <td><i class="fas fa-map-marker-alt text-muted me-2"></i>City Park</td>
-                                <td><span class="status-badge resolved">Resolved</span></td>
-                                <td><i class="fas fa-ellipsis-h text-muted"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Complaints</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>503</td>
+                                    <td><strong>Wi-Fi Not Working</strong></td>
+                                    <td><i class="fas fa-map-marker-alt text-muted me-1"></i> Dept Next</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-dots">...</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>501</td>
+                                    <td><strong>Leaky Pipe</strong></td>
+                                    <td><i class="fas fa-map-marker-alt text-muted me-1"></i> Eco Park</td>
+                                    <td><span class="status-badge resolved">Resolved</span></td>
+                                    <td>
+                                        <div class="action-dots">...</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
