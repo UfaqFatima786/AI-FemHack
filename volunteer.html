@@ -21,8 +21,7 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="Capture.JPG"
-                    alt="Saylani Logo" class="img-fluid">
+                <img src="Capture.JPG" alt="Saylani Logo" class="img-fluid">
             </div>
 
             <ul class="list-unstyled components">
@@ -131,26 +130,7 @@
         </div>
     </div>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-    <!-- Config & Scripts -->
-    <script src="firebase-config.js"></script>
-    <script src="auth.js"></script>
-    <script src="app.js"></script>
-    <script>
-        // Sidebar active state logic
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                const greeting = document.getElementById('user-greeting');
-                if (greeting) {
-                    greeting.textContent = user.email || "Welcome, User";
-                }
-            }
-        });
-    </script>
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
